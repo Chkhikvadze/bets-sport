@@ -1,0 +1,37 @@
+{
+  "name": "hello",
+  "version": "1.6.0",
+  "homepage": "http://adodson.com/hello.js/",
+  "license": "https://github.com/MrSwitch/hello.js/blob/master/LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com:MrSwitch/hello.js.git"
+  },
+  "main": [
+    "dist/hello.all.min.js"
+  ],
+  "devDependencies": {
+    "mocha": "~1.21.5",
+    "json2": "*",
+    "requirejs": "~2.1.15",
+    "expect": "~0.3.1",
+    "sinonjs": "~1.10.2"
+  },
+  "ignore": [
+    "tests",
+    "demos",
+    "assets",
+    "ui",
+    "*.html",
+    "package.json"
+  ],
+  "_release": "1.6.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.6.0",
+    "commit": "75962f94079e1005caa44044624c97eb4fad0901"
+  },
+  "_source": "git://github.com/MrSwitch/hello.js.git",
+  "_target": "1.6.0",
+  "_originalSource": "hello"
+}

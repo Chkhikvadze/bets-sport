@@ -1,0 +1,221 @@
+<div class="row">
+    <div class="col-lg-4">
+        <ol class="breadcrumb">
+
+            <li><a href="#{{url.project}}/{{projectId}}/models">Models</a></li>
+            <li><a href="#{{url.project}}/add"> Add </a></li>
+        </ol>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-lg-5" id="model-form">
+        <div class="wing-well">
+            <form class="form-horizontal" id="main-form" name="Myform" novalidate>
+
+                <input type="hidden" name="id" id="id" ng-model="doc.id"/>
+
+                <my-input id="name" title="Name" ng-model="doc.name" required></my-input>
+
+                <my-input id="title" title="Title" ng-model="doc.title" required> </my-input>
+
+                <my-text-area id="description" title="Description" ng-model="doc.description"> </my-text-area>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Get List</label>
+
+                    <div class="col-sm-1">
+                        <input type="checkbox" class="form-control" ng-model="doc.list.is">
+                    </div>
+
+                    <label class="col-sm-2 control-label">Token Require</label>
+
+                    <div class="col-sm-1">
+                        <input type="checkbox" class="form-control" ng-model="doc.list.tokenRequire">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Create</label>
+
+                    <div class="col-sm-1">
+                        <input type="checkbox" class="form-control" ng-model="doc.create.is">
+                    </div>
+
+                    <label class="col-sm-2 control-label">Token Require</label>
+
+                    <div class="col-sm-1">
+                        <input type="checkbox" class="form-control" ng-model="doc.create.tokenRequire">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Update</label>
+
+                    <div class="col-sm-1">
+                        <input type="checkbox" class="form-control" ng-model="doc.update.is">
+                    </div>
+
+                    <label class="col-sm-2 control-label">Token Require</label>
+
+                    <div class="col-sm-1">
+                        <input type="checkbox" class="form-control" ng-model="doc.update.tokenRequire">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Read</label>
+
+                    <div class="col-sm-1">
+                        <input type="checkbox" class="form-control" ng-model="doc.read.is">
+                    </div>
+
+                    <label class="col-sm-2 control-label">Token Require</label>
+
+                    <div class="col-sm-1">
+                        <input type="checkbox" class="form-control" ng-model="doc.read.tokenRequire">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Delete</label>
+
+                    <div class="col-sm-1">
+                        <input type="checkbox" class="form-control" ng-model="doc.delete.is">
+                    </div>
+
+                    <label class="col-sm-2 control-label">Token Require</label>
+
+                    <div class="col-sm-1">
+                        <input type="checkbox" class="form-control" ng-model="doc.delete.tokenRequire">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">User Info Fields</label>
+
+                    <div class="col-sm-1">
+                        <input type="checkbox" class="form-control" ng-model="doc.userInfo">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"></label>
+
+                    <div class="col-sm-10">
+                        <button class="btn btn-primary" ng-click="save()" ng-disabled="Myform.$invalid"> save
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="col-lg-7" id="fields-form">
+
+        <div class="wing-well">
+            <form class="form-horizontal" name="MyformFields" novalidate>
+                <input type="hidden" name="id" ng-model="currentField._id"/>
+
+                <my-input id="name" title="Name" ng-model="currentField.name" required></my-input>
+
+                <my-input id="title" title="Title" ng-model="currentField.title" required></my-input>
+
+                <div class="form-group required">
+                    <label class="col-sm-2 control-label">Type &#160;</label>
+
+                    <div class="col-sm-10">
+                        <ui-select required="true" ng-model="currentField.type">
+                            <ui-select-match placeholder="Type">{{$select.selected}}
+                            </ui-select-match>
+                            <ui-select-choices repeat="item in typeList | filter: $select.search">
+                                <div ng-bind-html="item | highlight: $select.search"></div>
+                            </ui-select-choices>
+                        </ui-select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Ref &#160;</label>
+
+                    <div class="col-sm-10">
+                        <ui-select required="true" ng-model="currentField.ref">
+                            <ui-select-match placeholder="Ref">{{$select.selected}}
+                            </ui-select-match>
+                            <ui-select-choices repeat="item in refList | filter: $select.search">
+                                <div ng-bind-html="item | highlight: $select.search"></div>
+                            </ui-select-choices>
+                        </ui-select>
+                    </div>
+                </div>
+
+                <my-input id="default" title="default" ng-model="currentField.default"></my-input>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Parent &#160;</label>
+
+                    <div class="col-sm-10">
+                        <ui-select required="true" ng-model="currentField.parent">
+                            <ui-select-match placeholder="Parent">{{$select.selected}}
+                            </ui-select-match>
+                            <ui-select-choices repeat="item in parentList | filter: $select.search">
+                                <div ng-bind-html="item | highlight: $select.search"></div>
+                            </ui-select-choices>
+                        </ui-select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Unique</label>
+                    <div class="col-sm-1">
+                        <input type="checkbox" class="form-control" ng-model="currentField.unique">
+                    </div>
+
+                    <label class="col-sm-2 control-label">Index</label>
+                    <div class="col-sm-1">
+                        <input type="checkbox" class="form-control" ng-model="currentField.index">
+                    </div>
+
+                    <label class="col-sm-2 control-label">Required</label>
+                    <div class="col-sm-1">
+                        <input type="checkbox" class="form-control" ng-model="currentField.required">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"></label>
+
+                    <div class="col-sm-10">
+                        <button class="btn btn-primary" ng-click="saveField()" ng-disabled="Myform.$invalid"> Add Field
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <table ng-table class="table">
+
+                <tr ng-repeat="itm in doc.fields">
+                    <td data-title="'Name'">{{itm.name}}</td>
+                    <td data-title="'Type'">{{itm.type}}</td>
+                    <td data-title="'Parent'">{{itm.parent}}</td>
+                    <td data-title="'Ref'">{{itm.ref}}</td>
+                    <td data-title="'Default'">{{itm.default}}</td>
+                    <td data-title="'Unique'">{{itm.unique}}</td>
+                    <td data-title="'Index'">{{itm.index}}</td>
+                    <td data-title="'Required'">{{itm.required}}</td>
+                    <td data-title="'Action'">
+                        <a href="" title="Delete" class="btn btn-default btn-xs"
+                           ng-click="deleteField(itm.name)">Delete</a>
+                        <a href="" title="edit" class="btn btn-default btn-xs"
+                           ng-click="editField(itm.name)">Edit</a>
+                    </td>
+                </tr>
+
+            </table>
+
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,57 @@
+<div class="row" >
+    <div class="col-lg-4">
+
+
+        <ol class="breadcrumb">
+
+            <li><a href="" ng-click="getNewBets()">Get New Bets</a></li>
+
+
+            <div class="form-group required">
+                <label class="col-sm-2 control-label">დასადები თანხა &#160;</label>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control" id="stake" ng-model="stake" placeholder="დასადები თანხა"required>
+                </div>
+
+            </div>
+            <li><a href="" ng-click="calculateBets()">Calculate Bets And View</a></li>
+
+        </ol>
+
+    </div>
+
+</div>
+
+
+<div class="row">
+
+    <!--<div class="col-lg-12 animated fadeInRight">-->
+    <div class="col-lg-12">
+
+        <div style="margin-top:20px;">
+
+                <table ng-table class="table">
+
+                    <tr ng-repeat="itm in data">
+                        <td data-title="'თამაში'">{{itm.player1}} - {{itm.player2}} </td>
+                        <td data-title="'თარიღი'">{{itm.date}}</td>
+                        <td data-title="'მოგების %'">{{itm.profitPercent| number:3}}</td>
+                        <td data-title="'მოგების თანხა'">{{itm.profitPayment| number:3}}</td>
+
+
+                        <td data-title="'ფსონები'">{{itm.BetRange}}</td>
+                        <td data-title="'მომწოდებლები'">{{itm.site}}</td>
+
+
+                        <td data-title="'1 თანხა'">{{itm.bet1Payment | number:3}}</td>
+                        <td data-title="'X თანხა'">{{itm.betXPayment| number:3}}</td>
+                        <td data-title="'2 თანხა'">{{itm.bet2Payment| number:3}}</td>
+                    </tr>
+                </table>
+
+        </div>
+
+    </div>
+
+</div>
+

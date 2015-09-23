@@ -1,0 +1,89 @@
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+
+
+        <ol class="breadcrumb">
+
+            <li><a href="#{{url.bet}}"> Bets</a></li>
+            <li><a href="#{{url.bet}}/add"> Add </a></li>
+
+        </ol>
+
+    </div>
+
+</div>
+
+<div class="row">
+
+    <div class="col-md-6 col-md-offset-3" id="form">
+
+        <div class="wing-well">
+
+            <form class="form-horizontal" id="main-form" name="Myform" novalidate>
+                <input type="hidden" name="id" id="id" ng-model="doc.id"/>
+
+                <my-input id="name" title="Name" ng-model="doc.name" required></my-input>
+
+                <my-input id="title" title="Title" ng-model="doc.title" required> </my-input>
+
+                <my-input id="web" title="Web" ng-model="doc.web" required> </my-input>
+
+                <my-input id="address" title="Address" ng-model="doc.address" required> </my-input>
+
+                <my-input id="port" title="Port" ng-model="doc.port" required> </my-input>
+
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Database</div>
+                    <div class="panel-body">
+                        <my-input id="databaseName" title="Name" ng-model="doc.database.name" required> </my-input>
+                        <my-input id="databasePort" title="Port" ng-model="doc.database.port" type="Number" required> </my-input>
+                        <my-input id="databaseAddress" title="Address" ng-model="doc.database.address" required> </my-input>
+                    </div>
+                </div>
+
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Mailgun</div>
+                    <div class="panel-body">
+                        <my-input id="mailgunApiKey" title="ApiKey" ng-model="doc.mailgun.apiKey" required> </my-input>
+                        <my-input id="mailgunDomain" title="Domain" ng-model="doc.mailgun.domain" required> </my-input>
+                        <my-input id="mailgunSupport" title="Support" ng-model="doc.mailgun.support" required> </my-input>
+                        <my-input id="mailgunNoreply" title="noreply" ng-model="doc.mailgun.noreply" required> </my-input>
+                        <my-input id="mailgunDefaultFrom" title="defaultFrom" ng-model="doc.mailgun.defaultFrom" required> </my-input>
+                    </div>
+                </div>
+
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Other</div>
+                    <div class="panel-body">
+                        <my-input id="USER_ACTIVATION_CALLBACK_URL" title="User Activation Callback Url" ng-model="doc.USER_ACTIVATION_CALLBACK_URL" required> </my-input>
+                        <my-input id="USER_FORGOT_CALLBACK_URL" title="User Forget Callback Url" ng-model="doc.USER_FORGOT_CALLBACK_URL" required> </my-input>
+
+                        <my-input id="debugApi" title="Debug Api Name" ng-model="doc.debugApi" required> </my-input>
+
+                        <my-input id="uploadServerPath" title="Upload Server Path" ng-model="doc.uploadServerPath"> </my-input>
+
+                        <my-input id="jwt_secret" title="JWT Secret" ng-model="doc.jwt_secret"> </my-input>
+
+                        <my-input id="getCredentials" title="Get Credentials" ng-model="doc.getCredentials"> </my-input>
+                    </div>
+                </div>
+
+                <my-text-area id="description" title="Description" ng-model="doc.description"> </my-text-area>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"></label>
+
+                    <div class="col-sm-10">
+                        <button class="btn btn-primary" ng-click="save()" ng-disabled="Myform.$invalid"> save
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+
+</div>
+
+

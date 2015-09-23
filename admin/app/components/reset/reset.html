@@ -1,0 +1,17 @@
+<div class="row">
+	<div class="col-md-4">&nbsp;</div>
+	<div class="col-md-4">
+		<form class="form-reset" role="form">
+			<h2 class="form-login-heading">პაროლის შეცვლა</h2>
+			<div class="form-group">
+				<input type="password" class="form-control" placeholder="პაროლი" data-ng-model="data.password" required>
+			</div>
+			<div class="form-group">
+				<input type="password" class="form-control" placeholder="გაიმეორეთ პაროლი" data-ng-model="data.confirmPassword" required>
+			</div>
+			<button class="btn btn-lg btn-info btn-block" type="submit" data-ng-click="reset()">შეცვლა</button>
+			<div data-ng-hide="message == ''" class="alert alert-danger">{{message}}</div>
+		</form>
+	</div>
+	<div class="col-md-4">&nbsp;</div>
+</div>

@@ -1,0 +1,226 @@
+
+<div class="container">
+<div class="row" >
+    <div class="col-lg-4">
+
+
+        <ol class="breadcrumb">
+
+            <li><a href="#{{url}}">პროფილი</a></li>
+
+        </ol>
+
+    </div>
+
+
+</div>
+
+       <div class="well">
+                    <div class="form-horizontal" id="main-form"   >
+                        <input type="hidden" name="_csrf" id="csrf" value="{{tokenValue}}" />
+                        <input type="hidden" name="id" id="id" ng-model="doc.id"/>
+                          <div class="form-group">
+                            <label for="Name" class="col-sm-2 control-label">სახელი</label>
+                            <div class="col-sm-10">
+                              <input type="name" class="form-control" id="Name" ng-model="doc.profile.fullName">
+                            </div>
+                          </div>
+                    
+                          <div class="form-group">
+                            <label for="lastname" class="col-sm-2 control-label">გვარი</label>
+                            <div class="col-sm-10">
+                              <input type="lastname" class="form-control" ng-model="doc.profile.lastName"  id="lastname" placeholder="გვარი">
+                            </div>
+                          </div>
+                     
+
+                          <div class="form-group">
+                            <label for="country" class="col-sm-2 control-label">ქვეყანა</label>
+                            <div class="col-sm-10">
+                              <select class="form-control" ng-model="doc.profile.country">
+                                <option ng-repeat="itm in Country">{{itm.name.official}}</option>
+                                
+                              </select>
+                            </div>
+                          </div>
+                   
+                        
+
+
+                      
+                          <div class="form-group">
+                            <label for="city" class="col-sm-2 control-label">ქალაქი</label>
+                            <div class="col-sm-10">
+                               <select class="form-control" ng-model="doc.profile.City">
+                                <option ng-repeat="itm in CityState">{{itm.City.name[current.langTo.name]}}</option>
+                              </select>
+                            </div>
+                          </div>
+                 
+
+                       
+                          <div class="form-group">
+                            <label for="state" class="col-sm-2 control-label">შტატი</label>
+                            <div class="col-sm-10">
+                              <select class="form-control" ng-model="doc.profile.state">
+                                <option ng-repeat="itm in CityState">{{itm.State.name[current.langTo.name]}}</option>
+                                
+                              </select>
+                            </div>
+                          </div>
+                     
+
+                        
+                          <div class="form-group">
+                            <label for="interf" class="col-sm-2 control-label">ინტერფეისის ენები</label>
+                            <div class="col-sm-10">
+                               <select class="form-control" ng-model="doc.profile.IntLanguage">
+                                <option>ინგლისური</option>
+                                <option>რუსული</option>
+                                <option>ფრანგული</option>
+                                
+                              </select>
+                            </div>
+                          </div> 
+
+
+
+                           <div class="form-group">
+                            <label for="lang" class="col-sm-2 control-label">მშობლიური ენა</label>
+                            <div class="col-sm-10">
+                               <select class="form-control" ng-model="doc.profile.NativeLanguage">
+                                <option>ინგლისური</option>
+                                <option>რუსული</option>
+                                <option>ფრანგული</option>
+                                
+                              </select>
+                            </div>
+                          </div> 
+
+
+
+                           <div class="form-group">
+                            <label for="lang" class="col-sm-2 control-label">რომელი ენის შესწავლა მინდა</label>
+                            <div class="col-sm-10">
+                               <select class="form-control" ng-model="doc.profile.iWantLanguage" multiple>
+                                <option>ინგლისური</option>
+                                <option>რუსული</option>
+                                <option>ფრანგული</option>
+                                
+                              </select>
+                            </div>
+                          </div>
+
+
+
+                          <div class="form-group">
+                            <label for="lang" class="col-sm-2 control-label">მე შემიძლია სწავლება</label>
+                                        <div class="col-sm-5">
+                                          <div class="col-sm-9">
+                                           <select class="form-control" ng-model="doc.profile.ICteach.From">
+                                            <option>ინგლისური</option>
+                                            <option>რუსული</option>
+                                            <option>ფრანგული</option>
+                                            
+                                              </select>
+                                            </div>
+
+                                         <label for="dd" class="col-sm-2 control-label">დან </label>
+
+                                        </div>
+
+                           <div class="col-sm-5">
+                                          <div class="col-sm-9">
+                                           <select class="form-control" ng-model="doc.profile.ICteach.To">
+                                            <option>ინგლისური</option>
+                                            <option>რუსული</option>
+                                            <option>ფრანგული</option>
+                                            
+                                              </select>
+                                            </div>
+
+                                         <label for="zz" class="col-sm-2 control-label">ზე</label>
+
+                                        </div>
+
+
+
+                          </div>
+
+
+
+                           <div class="form-group">
+                            <label for="edtype" class="col-sm-2 control-label">განათლება</label>
+                            <div class="col-sm-10">
+                              <select class="form-control" ng-model="doc.profile.educationType">
+                                <option ng-repeat="itm in educationType">{{itm.name[current.langTo.name]}}</option>
+                               
+                              </select>
+                            </div>
+                          </div>
+
+
+                          <div class="form-group">
+                            <label for="Reason" class="col-sm-2 control-label">რისთვის მინდა ენის/ენების შესწავლა</label>
+                            <div class="col-sm-10">
+                              <select class="form-control" ng-model="doc.profile.Reason">
+                            <option ng-repeat="itm in learn">{{itm.name[current.langTo.name]}}</option>
+                                
+                              </select>
+                            </div>
+                          </div>
+
+
+
+                          <div class="form-group">
+                            <label for="skill" class="col-sm-2 control-label">კომპიუტერული უნარები</label>
+                            <div class="col-sm-10">
+                              <select class="form-control" ng-model="doc.profile.skill">
+                                <option ng-repeat="itm in CompSkill" >{{itm.name[current.langTo.name]}}</option>
+
+                                
+                              </select>
+                            </div>
+                          </div>
+
+
+                          <div class="form-group">
+                            <label for="family" class="col-sm-2 control-label">ოჯახური მდგომარეობა</label>
+                            <div class="col-sm-10">
+                              <select class="form-control" ng-model="doc.profile.Family">
+                             <option ng-repeat="itm in FamilyS">{{itm.name[current.langTo.name]}}</option>
+                                
+                              </select>
+                            </div>
+                          </div> 
+
+
+                          <div class="form-group">
+                            <label for="life" class="col-sm-2 control-label">ცხოვრების პრიორიტეტები</label>
+                            <div class="col-sm-10">
+                              <select class="form-control" ng-model="doc.profile.LifePriority">
+                              <option ng-repeat="itm in LifeP">{{itm.name[current.langTo.name]}}</option>
+                                
+                              </select>
+                            </div>
+                          </div>  
+
+
+                            <div class="form-group">
+                            <label for="prof" class="col-sm-2 control-label">პროფესია</label>
+                            <div class="col-sm-10">
+                              <select class="form-control" ng-model="doc.profile.proffesiontype">
+                              <option ng-repeat="itm in PropType">{{itm.name[current.langTo.name]}}</option>
+                                
+                              </select>
+                            </div>
+                          <div class="col-sm-10">
+                            <button class="btn btn-primary" ng-click="save()" > შენახვა</button>
+                        </div>
+                          </div>
+                        
+                </div> 
+
+
+              </div>  
+</div>

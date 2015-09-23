@@ -1,0 +1,50 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" ng-controller="headerController">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false"
+                    aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">BetSport.ge</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+
+                <li class="dropdown" data-ng-hide="!user.isLoggedIn">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">ადმინისტრაცია
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#/bet">ფსონები</a></li>
+
+                    </ul>
+                </li>
+
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+
+
+                <li data-ng-hide="!user.isLoggedIn">
+                    <a href="#/profile"> {{user.email}}</a>
+                </li>
+                <li data-ng-hide="!user.isLoggedIn">
+                    <a href="" data-ng-click="logOut()">გამოსვლა</a>
+                </li>
+                <li data-ng-hide="user.isLoggedIn">
+                    <a href="#/login">შესვლა</a>
+                </li>
+                <li data-ng-hide="user.isLoggedIn">
+                    <a href="#/signup">რეგისტრაცია</a>
+                </li>
+            </ul>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</nav>
+<div class="alert alert-warning text-center" role="alert" ng-hide="AccActivate" ng-controller="headerController">
+    გთხოვთ გააქტიუროთ ექაუნთი, <a href="" data-ng-click="requestActivate()">აქტივაციის მაილის მიღება.</a>
+</div>

@@ -1,0 +1,42 @@
+<div class="container">
+<div class="row">
+
+<div class="col-md-6">
+  <form role="form" class="login-middle-box">
+      <h2 class="">შესვლა</h2>
+      <div class="form-group">
+          <input name="email" type="email" class="form-control" placeholder="ელ-ფოსტა" required data-ng-model="loginData.username"
+          autofocus>
+      </div>
+      <div class="form-group">
+          <input type="password" class="form-control" placeholder="პაროლი" data-ng-model="loginData.password" required>
+          <div class="pull-right">
+
+          </div>
+      </div>
+      <button class="btn btn-md btn-info btn-block login-submit" type="submit" data-ng-click="login()">ავტორიზაცია</button>
+
+      <div class="form-group">
+        <div class="">
+            <a class="btn btn-block btn-social btn-facebook" href="" ng-click="facebook()">
+                <i class="fa fa-facebook"></i> Sign in with Facebook
+            </a>
+        </div>
+      </div>
+
+      <div class="form-group">
+          <a href="/#forgot">პაროლის აღდგენა</a> / <a href="/#signup"> რეგისტრაცია </a>
+      </div>
+
+      <div class="form-group">
+          <div data-ng-hide="message == ''" class="alert alert-danger">{{message}}</div>
+      </div>
+
+  </form>
+
+
+
+</div>
+</div>
+
+</div>
