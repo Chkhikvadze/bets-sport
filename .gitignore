@@ -10,7 +10,6 @@ admin/assets/bower_components/*
 
 server/node_modules/*
 server/public/uploads/*
-doc/node_modules/*
 
 client-test/*
 server-test/node_modules/*
