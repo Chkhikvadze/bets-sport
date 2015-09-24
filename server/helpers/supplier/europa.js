@@ -1,8 +1,8 @@
 /**
  * Created by gigac on 9/18/2015.
  */
-var core = require('../helpers/core.js');
-var logger = require('../helpers/logger.js');
+var core = require('../core.js');
+var logger = require('../logger.js');
 var async = require('async');
 var request = require('request');
 var cheerio = require('cheerio');

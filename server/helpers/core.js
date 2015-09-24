@@ -53,8 +53,7 @@ module.exports.saveDataInDatabase = function (item, callback) {
                         ]
                     }
                 ]
-            }
-            ;
+            } ;
 
         Model.findOne(where, function (err, doc) {
                 if (err) {

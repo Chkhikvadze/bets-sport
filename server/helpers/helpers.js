@@ -3,51 +3,6 @@ var fs = require('fs');
 var Chance = require('chance');
 var config = require('./config');
 
-var mapObj = {
-    ა: "a",
-    ბ: "b",
-    გ: "g",
-    დ: "d",
-    ე: "e",
-    ვ: "v",
-    ზ: "z",
-    თ: "t",
-    ი: "i",
-    კ: "k",
-    ლ: "l",
-    მ: "m",
-    ნ: "n",
-    ო: "o",
-    პ: "p",
-    ჟ: "j",
-    რ: "r",
-    ს: "s",
-    ტ: "t",
-    უ: "u",
-    ფ: "f",
-    ქ: "q",
-    ღ: "gh",
-    ყ: "y",
-    შ: "sh",
-    ჩ: "ch",
-    ც: "c",
-    ძ: "dz",
-    წ: "w",
-    ჭ: "tc",
-    ხ: "x",
-    ჯ: "j",
-    ჰ: "h",
-    ' ': "-",
-    ',': "",
-    '.': "",
-    "/": "",
-    '(': "",
-    ')': "",
-    '#': "",
-
-};
-
-
 var error = function (message) {
     console.log(message);
 };

@@ -14,13 +14,14 @@
   ],
   "dependencies": {
     "angular": "1.4.1",
-    "angular-route": "1.4.1",
-    "angular-resource": "1.4.1",
     "angular-bootstrap": "0.13.0",
     "angular-cookies": "1.4.1",
+    "angular-resource": "1.4.1",
+    "angular-route": "1.4.1",
     "bootstrap-social": "4.9.1",
+    "hello": "1.6.0",
     "jquery-ui": "~1.11.2",
     "ng-table": "~0.5.4",
-    "hello": "1.6.0"
+    "nprogress": "~0.2.0"
   }
 }

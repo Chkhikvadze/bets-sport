@@ -15,6 +15,7 @@ module.exports.list = function (req, res) {
     return crudController.list(req, res);
 };
 
+
 module.exports.getNewBets = function (req, res) {
 
     Bet.remove({}, function (err) {
@@ -35,13 +36,14 @@ module.exports.getNewBets = function (req, res) {
                         console.log("finish pinnaclesportsBets");
 
                         console.log("Finish Alllllllllllllllllllllllllllllllllllllllllllllllllllllllllll");
+
+
+                        return res.status(200).json(response.success({message : "All Finish"}));
                     });
                 });
             });
         });
     });
-
-    return res.status(200).json(response.success({}));
 };
 
 module.exports.calculateBets = function (req, res) {

@@ -35,14 +35,6 @@ myApp.config(function ($routeProvider) {
             controller: "betController",
             templateUrl: "/components/bet/list.html"
         })
-        .when(bet + "/add", {
-            controller: "betEditController",
-            templateUrl: "/components/bet/edit.html"
-        })
-        .when(bet + "/edit/:id", {
-            controller: "betEditController",
-            templateUrl: "/components/bet/edit.html"
-        })
         //Bet ###
 
 

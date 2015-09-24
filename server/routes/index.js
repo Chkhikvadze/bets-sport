@@ -12,7 +12,6 @@ var crudGenerator = require('./crud.js');
 
 var router = express.Router();
 
-
 module.exports = function (app) {
 
     if (app.get('env') === 'development') {

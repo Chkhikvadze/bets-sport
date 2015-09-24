@@ -10,12 +10,14 @@ var crypto = require('crypto');
 var fs = require('fs');
 var debug = require('debug')('betSport-api');
 
+
 var app = express();
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 app.all('/*', function (req, res, next) {
     // CORS headers
@@ -47,7 +49,6 @@ app.use(function (req, res, next) {
     err.status = 404;
     next(err);
 });
-
 // error handlers
 
 // development error handler
