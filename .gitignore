@@ -1,6 +1,6 @@
 # Specifies intentionally untracked files to ignore when using Git
 # http://git-scm.com/docs/gitignore
-.idea/*
+
 node_modules/*
 
 admin/node_modules/*
@@ -10,9 +10,6 @@ admin/assets/bower_components/*
 
 server/node_modules/*
 server/public/uploads/*
-
-client-test/*
-server-test/node_modules/*
 
 *.pdf
 *.log

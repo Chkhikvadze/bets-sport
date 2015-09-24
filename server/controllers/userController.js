@@ -8,7 +8,6 @@ var async = require('async');
 var Mailgun = require('mailgun-js');
 var os = require('os');
 var response = require('../helpers/response.js');
-var copyFrom = require('../helpers').copyFrom;
 var tokenController = require('./tokenController.js');
 var roles = require('../models/const.js').USER_ROLES;
 var User = require('../models/user.js');

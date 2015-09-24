@@ -1,10 +1,7 @@
 /// <reference path="../../typings/angularjs/angular.d.ts"/>
 
 var myApp = angular.module('myApp',
-    ['ngRoute', 'ngResource', 'ui.bootstrap', 'ngAnimate', 'ngCookies', "ngTable", 'ui.select', 'ngSanitize', 'ui.bootstrap',
-        'ui.grid', 'ui.grid.resizeColumns', 'ui.grid.moveColumns',
-        'ui.grid.selection', 'ui.grid.cellNav', 'ui.grid.pinning',
-        'ui.grid.resizeColumns', 'ui.grid.edit', 'ui.grid.pagination', 'ui.grid.expandable','ngFileUpload']);
+    ['ngRoute', 'ngResource', 'ui.bootstrap',  'ngCookies', "ngTable", 'ui.bootstrap']);
 
 
 // routes
@@ -24,21 +21,6 @@ myApp.config(function ($routeProvider) {
             controller: "signupController",
             templateUrl: "/components/signup/signup.html"
         })
-
-        .when("/profile", {
-            controller: "profileController",
-            templateUrl: "/components/profile/profile.tpl.html"
-        })
-
-        .when("/courses", {
-            templateUrl: '/components/course/course.tpl.html',
-            controller: "courseController"
-        })
-        .when("/about", {
-            controller: "aboutController",
-            templateUrl: "/components/about/about.html"
-        })
-
         .when("/forgot/", {
             controller: "forgotController",
             templateUrl: "/components/forgot/forgot.html"
@@ -48,7 +30,6 @@ myApp.config(function ($routeProvider) {
             templateUrl: "/components/reset/reset.html",
             reloadOnSearch: false
         })
-
         //Bet
         .when(bet, {
             controller: "betController",

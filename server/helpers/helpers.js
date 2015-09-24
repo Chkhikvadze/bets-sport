@@ -82,48 +82,9 @@ module.exports = {
         return dformat;
     },
 
-    removeImageStyle: function (str) {
-
-        str = str.replace("background-image:url(", "");
-        str = str.replace("); display:block;", "");
-
-        return str;
-    },
-
-    removeImageStyle2: function (str) {
-
-        str = str.replace("background-image:url('", "");
-        str = str.replace("')", "");
-
-        return str;
-    },
-
-    removeSize: function (str) {
-        return str.replace(/(\d)+x(\d)+/, "");
-    },
-
-    removeThumb: function (str) {
-
-        str = str.replace("thumb_", "");
-        return str;
-    },
-
-    mapUrl: function (title) {
-
-        var url = title.replace(/ა|ბ|გ|დ|ე|ვ|ზ|თ|ი|კ|ლ|მ|ნ|ო|პ|ჟ|რ|ს|ტ|უ|ფ|ქ|ღ|ყ|შ|ჩ|ც|ძ|წ|ჭ|ხ|ჯ|ჰ|,|\/|\#|\(|\)|\.|\s/gi, function (matched) {
-            return mapObj[matched];
-        });
-
-        return url.replace(/\W+/g, "-");
-    },
-
     download: function (uri, filename, callback) {
 
         request.head(uri, function (err, res, body) {
-
-            //console.log('content-type:', res.headers['content-type']);
-            //console.log('content-length:', res.headers['content-length']);
-
             var r = request(uri).pipe(fs.createWriteStream(config.uploadPath + filename));
             r.on('close', callback);
             r.on('error', error);
@@ -132,24 +93,5 @@ module.exports = {
 
     randStr: randStr,
     randImageName: randImageName,
-
-    currentTimeSTamp: function () {
-
-        return new Date().getTime();
-
-    },
-
-    currentDate: function () {
-
-        return new Date();
-    },
-
-    text_in_between: function (source, start, end, include_start, include_end) {
-        var start_index = source.indexOf(start);
-        var end_index = source.indexOf(end, start_index);
-        if (start_index !== -1 && end_index !== -1)
-            return source.substring(start_index + (include_start ? 0 : start.length),
-                end_index + (include_end ? end.length : 0));
-    }
 };
 

@@ -23,8 +23,6 @@ module.exports.saveDataInDatabase = function (item, callback) {
             return;
         }
 
-
-        var or = {};
         var dtSt = helper.dateToString(item.date);
         var where = {
                 $and: [

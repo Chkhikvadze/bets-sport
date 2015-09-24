@@ -6,7 +6,6 @@ var path = require('path');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 var response = require('./helpers/response.js');
-var multer = require('multer');
 var crypto = require('crypto');
 var fs = require('fs');
 var debug = require('debug')('betSport-api');
@@ -17,46 +16,6 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.use(multer({
-    dest: __dirname + '/public/uploads/',
-    includeEmptyFields: true,
-    rename: function (fieldname, filename, req) {
-        var changeName = "true";
-        if (req !== undefined && req.query !== undefined && req.query.changeName !== undefined) {
-            changeName = req.query.changeName;
-        }
-
-        if (changeName === "true") {
-            var random_string = fieldname + filename + Date.now() + Math.random();
-            return fieldname + '_' + crypto.createHash('md5').update(random_string).digest('hex');
-        } else {
-            return filename;
-        }
-    },
-    changeDest: function (dest, req) {
-        var folder = "";
-        if (req !== undefined && req.query !== undefined && req.query.folder !== undefined) {
-            folder = req.query.folder;
-        }
-        var dir = dest + '\\' + folder;
-
-        if (!fs.existsSync(dir)) {
-            fs.mkdirSync(dir);
-        }
-        return dir;
-    },
-    limits: {
-        files: 3,
-        fileSize: 1 * 1024 * 1024
-    },
-    onFileSizeLimit: function (file) {
-        file.sizeLimitError = true;
-        fs.unlink(file.path, function (err) {
-        }); // delete the partially written file
-    }
-}));
-
 
 app.all('/*', function (req, res, next) {
     // CORS headers

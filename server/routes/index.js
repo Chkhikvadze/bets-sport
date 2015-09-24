@@ -39,16 +39,8 @@ module.exports = function (app) {
 
 
     router.use('/api/v1/bet/', tokenController.require, crudGenerator.controller(require('../controllers/betController.js')));
-
     router.route('/api/v1/bet/getNewBets/:site').get(tokenController.require, betController.getNewBets);
     router.route('/api/v1/bet/calculateBets/:stake').get(tokenController.require, betController.calculateBets);
-
-    router.post('/api/v1/upload/', function (req, res) {
-        var file = req.files.file;
-        var filename = file.name;
-        return res.status(200).json(response.success({filename: filename}));
-    });
-
 
     return router;
 };

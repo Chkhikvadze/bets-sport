@@ -3,11 +3,12 @@ var Model = require('../models/bet.js');
 var mongoose = require('../models/mongoose.js');
 var crudController = require('./crudController.js')(Model);
 var core = require('../helpers/core.js');
-var xbet = require('../supplier/1xbet.js');
-var adjarabet = require('../supplier/adjarabet.js');
-var europa = require('../supplier/europa.js');
-var pinnaclesportsBets = require('../supplier/pinnaclesportsBets.js');
-var liderbet = require('../supplier/liderbet.js');
+var xbet = require('../helpers/supplier/1xbet.js');
+var adjarabet = require('../helpers/supplier/adjarabet.js');
+var europa = require('../helpers/supplier/europa.js');
+var pinnaclesportsBets = require('../helpers/supplier/pinnaclesportsBets.js');
+var liderbet = require('../helpers/supplier/liderbet.js');
+var Bet = require('../models/bet.js');
 
 
 module.exports.list = function (req, res) {
@@ -16,23 +17,25 @@ module.exports.list = function (req, res) {
 
 module.exports.getNewBets = function (req, res) {
 
-    //liderbet.run(function () {
-    //    console.log("Liderbet Finish");
-    //});
+    Bet.remove({}, function (err) {
+        if (err)
+        {
+            return res.status(400).json(response.bad_request(err.errors));
+        }
+        xbet.run1xbet(function () {
+            console.log("finish 1xbet");
 
-    xbet.run1xbet(function () {
-        console.log("finish 1xbet");
+            adjarabet.runAdjarabet(function (err) {
+                console.log("finish Adjarabet");
 
-        adjarabet.runAdjarabet(function (err) {
-            console.log("finish Adjarabet");
+                europa.runEuropabet(function () {
+                    console.log("finish Europa");
 
-            europa.runEuropabet(function () {
-                console.log("finish Europa");
+                    pinnaclesportsBets.runPinnaclesports(function () {
+                        console.log("finish pinnaclesportsBets");
 
-                pinnaclesportsBets.runPinnaclesports(function () {
-                    console.log("finish pinnaclesportsBets");
-
-                    console.log("Finish Alllllllllllllllllllllllllllllllllllllllllllllllllllllllllll");
+                        console.log("Finish Alllllllllllllllllllllllllllllllllllllllllllllllllllllllllll");
+                    });
                 });
             });
         });
