@@ -17,7 +17,7 @@ https://www.europe-bet.com/
 
 
 
-./screenshot/bets.png
+![flasb](https://raw.github.com/chkhikvadze/flasb/master/screenshots/flasb.PNG "Starter template")
 
 
 
