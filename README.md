@@ -9,15 +9,20 @@ Simply put, it’s a situation where the player gets a profit regardless of the 
 A player may want to set bets in a way that will produce a better result under specific conditions.
 
 
-### Parsing site:
+###Features
+
+Information from 4 bookmakers
+Updates within a few minutes
+Simple surebet calculator able to calculate the most sophisticated odds
+
+
+### Parsing bookmakers site:
 
 * http://www.pinnaclesports.com
-
 * https://www.1xbet.com
-
 * https://adjarabet.com/
-
 * https://www.europe-bet.com/
+
 
 
 
