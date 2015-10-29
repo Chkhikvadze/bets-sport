@@ -20,7 +20,7 @@ https://www.europe-bet.com/
 
 
 
-![flasb](https://raw.github.com/chkhikvadze/flasb/master/screenshots/flasb.PNG "Starter template")
+![flasb](https://github.com/Chkhikvadze/bets-sport/blob/master/screenshot/bets.png "Starter template")
 
 
 
