@@ -28,12 +28,19 @@ A player may want to set bets in a way that will produce a better result under s
 ![flasb](https://github.com/Chkhikvadze/bets-sport/blob/master/screenshot/bets.png "Starter template")
 
 
-#How Install & Run
-* npm install in server
-* npm install in admin
-* bower install in admin/assets
-* npm start in server
-* npm start in admin
+#How install & run server
+```
+$ cd server
+$ npm install install
+$ npm start
+```
+#How install & run admin
+```
+$ cd admin
+$ npm install
+$ cd assets
+$ bower install
+```
 * view http://localhost:7777/
 
 
