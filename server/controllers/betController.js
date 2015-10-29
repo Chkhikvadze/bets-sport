@@ -7,7 +7,6 @@ var xbet = require('../helpers/supplier/1xbet.js');
 var adjarabet = require('../helpers/supplier/adjarabet.js');
 var europa = require('../helpers/supplier/europa.js');
 var pinnaclesportsBets = require('../helpers/supplier/pinnaclesportsBets.js');
-var liderbet = require('../helpers/supplier/liderbet.js');
 var Bet = require('../models/bet.js');
 
 

@@ -15,7 +15,7 @@ angular.module('myApp').controller('signupController', ['$scope', '$location', '
 			authService.registration($scope.registration).then(function (response) {
 				$location.path('active');
 			}, function (response) {
-					$scope.message = "მომხმარებელი ასეთი ელ. ფოსტით უკვე დარეგისტრირებულია";
+					$scope.message = "Users of this email already registered";
 				});
 		};
 	}]);

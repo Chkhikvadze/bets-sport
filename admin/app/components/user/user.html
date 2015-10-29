@@ -9,24 +9,6 @@
                 <div>{{userInfo.city}}</div>
             </div>
         </div>
-        <div class="user-contest row">
-            <div class="user-contest-item col-xs-6 col-sm-4 col-md-4 col-lg-3" ng-repeat="item in userContestList">
-                <div class="user-contest-photo">
-                    <img ng-src="{{item.image}}" alt=""/>
-                </div>
-                <h4>{{item.contest.title}}</h4>
-                <div class="clear">
-                    <div class="like-photo">
-                        <i class="fa fa-thumbs-o-up" ng-click="like($index)"></i>
-                        <span>{{item.sum_like}}</span>
-                    </div>
-                    <div class="dislike-photo">
-                        <i class="fa fa-thumbs-o-down" ng-click="dislike($index)"></i>
-                        <span>{{item.sum_dislike}}</span>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="user-photos row">
             <div class="user-photo-item col-xs-3 col-sm-3 col-md-4 col-lg-3" ng-repeat="item in userContestList">
                 <img ng-src="{{item.image}}" alt=""/>

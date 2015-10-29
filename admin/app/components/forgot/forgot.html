@@ -1,11 +1,11 @@
 <form role="form" class="login-middle-box">
-    <h2 class="text-center">პაროლის აღდგენა</h2>
+    <h2 class="text-center">Forget password</h2>
     <div class="form-group">
         <input name="email" type="email" class="form-control" placeholder="ელ. ფოსტა" required data-ng-model="data.username"
                autofocus>
     </div>
 
-    <button class="btn btn-md btn-info btn-block login-submit" type="submit" data-ng-click="forgot()">აღდგენა</button>
+    <button class="btn btn-md btn-info btn-block login-submit" type="submit" data-ng-click="forgot()">Forget</button>
     <div data-ng-hide="message == ''" class="alert alert-danger">{{message}}</div>
     <div data-ng-hide="info == ''" class="alert alert-info">{{info}}</div>
 </form>

@@ -14,29 +14,21 @@
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
 
-                <li><a href="#/bet" data-ng-hide="!user.isLoggedIn">ფსონები</a></li>
+                <li><a href="#/bet" data-ng-hide="!user.isLoggedIn">Bets</a></li>
 
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-
-
                 <li data-ng-hide="!user.isLoggedIn">
-                    <a href="#/profile"> {{user.email}}</a>
-                </li>
-                <li data-ng-hide="!user.isLoggedIn">
-                    <a href="" data-ng-click="logOut()">გამოსვლა</a>
+                    <a href="" data-ng-click="logOut()">Sign out</a>
                 </li>
                 <li data-ng-hide="user.isLoggedIn">
-                    <a href="#/login">შესვლა</a>
+                    <a href="#/login">Sign in</a>
                 </li>
                 <li data-ng-hide="user.isLoggedIn">
-                    <a href="#/signup">რეგისტრაცია</a>
+                    <a href="#/signup">Sign up</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
-<div class="alert alert-warning text-center" role="alert" ng-hide="AccActivate" ng-controller="headerController">
-    გთხოვთ გააქტიუროთ ექაუნთი, <a href="" data-ng-click="requestActivate()">აქტივაციის მაილის მიღება.</a>
-</div>

@@ -3,18 +3,17 @@
 
 <div class="col-md-6">
   <form role="form" class="login-middle-box">
-      <h2 class="">შესვლა</h2>
+      <h2 class="">Sign in</h2>
       <div class="form-group">
-          <input name="email" type="email" class="form-control" placeholder="ელ-ფოსტა" required data-ng-model="loginData.username"
+          <input name="email" type="email" class="form-control" placeholder="email" required data-ng-model="loginData.username"
           autofocus>
       </div>
       <div class="form-group">
-          <input type="password" class="form-control" placeholder="პაროლი" data-ng-model="loginData.password" required>
+          <input type="password" class="form-control" placeholder="password" data-ng-model="loginData.password" required>
           <div class="pull-right">
-
           </div>
       </div>
-      <button class="btn btn-md btn-info btn-block login-submit" type="submit" data-ng-click="login()">ავტორიზაცია</button>
+      <button class="btn btn-md btn-info btn-block login-submit" type="submit" data-ng-click="login()">Sign in</button>
 
       <div class="form-group">
         <div class="">
@@ -25,7 +24,7 @@
       </div>
 
       <div class="form-group">
-          <a href="/#forgot">პაროლის აღდგენა</a> / <a href="/#signup"> რეგისტრაცია </a>
+          <a href="/#forgot">Forgot password</a> / <a href="/#signup"> Sign up </a>
       </div>
 
       <div class="form-group">

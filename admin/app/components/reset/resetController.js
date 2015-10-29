@@ -24,7 +24,7 @@ angular.module('myApp').controller('resetController', ['$scope', '$location', 'U
 					} else if (response.status === 400) {
 					}
 
-					$scope.message = 'Reset token expired (ერთად გადავთარგმნოთ)!';
+					$scope.message = 'Reset token expired!';
 				});
 		};
 	}]);

@@ -1,4 +1,4 @@
-/**
+/**Sign out
 *Created by Beka on 06/17/2015
 */
 

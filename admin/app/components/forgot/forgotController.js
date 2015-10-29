@@ -14,14 +14,14 @@ angular.module('myApp').controller('forgotController', ['$scope', '$location', '
 			$scope.info = "";
 			
 			User.forgot(this.data, function (response) {
-				$scope.info = "თქვენს ელ. ფოსტაზე გამოგზავნილია ინსტრუქცია პაროლის აღსადგენად";
+				$scope.info = "Your e-mail. Posted mailed instructions for password recovery";
 			}, function (response) {
 					if (response.status === 404) {
 						console.log("not found user");
 					} else if (response.status === 400) {
 					}
 
-					$scope.message = 'მომხმარებელი ასეთი ელ. ფოსტით არ არსებობს!';
+					$scope.message = 'Users of such mail does not exist!';
 				});
 		};
 

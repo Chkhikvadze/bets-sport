@@ -15,7 +15,7 @@ angular.module('myApp').controller('loginController',
 				authService.login(this.loginData).then(function (response) {
 					$location.path('active');
 				}, function (err) {
-						$scope.message = 'მომხმარებელი ან პაროლი არასწორია';
+						$scope.message = 'Invalid username or password';
 					});
 			};
 		
@@ -39,7 +39,7 @@ angular.module('myApp').controller('loginController',
 						$location.path('active');
 					}, function (err) {
 							console.log(err);
-							$scope.message = 'ელ. ფოსტა აუცილებელია!!!';
+							$scope.message = 'Email is required!!!';
 						});
 				}
 
