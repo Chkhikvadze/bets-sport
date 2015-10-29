@@ -11,9 +11,9 @@ A player may want to set bets in a way that will produce a better result under s
 
 ###Features
 
-Information from 4 bookmakers
-Updates within a few minutes
-Simple surebet calculator able to calculate the most sophisticated odds
+* Information from 4 bookmakers
+* Updates within a few minutes
+* Simple surebet calculator able to calculate the most sophisticated odds
 
 
 ### Parsing bookmakers site:
