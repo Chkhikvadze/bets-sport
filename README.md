@@ -11,8 +11,11 @@ A player may want to set bets in a way that will produce a better result under s
 Parsing site:
 
 http://www.pinnaclesports.com
+
 https://www.1xbet.com
+
 https://adjarabet.com/
+
 https://www.europe-bet.com/
 
 
